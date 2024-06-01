@@ -1,4 +1,5 @@
-# https://nitishdas1517.github.io/
-My website
+# nitishdas1517.github.io
+
+Personal website
 
 Huge Thanks to [Prabina!](https://prabina-p.github.io/)
