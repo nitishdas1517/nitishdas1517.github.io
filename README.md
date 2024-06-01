@@ -1,2 +1,2 @@
-# nitishdas1517.github.io
-Personal website
+# https://nitishdas1517.github.io/
+My website
