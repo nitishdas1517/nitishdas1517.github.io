@@ -1,25 +1,17 @@
 // dark-mode.js
+// The initial theme is set by an inline script in <head> to avoid a flash;
+// this file wires up the toggle button.
 
 document.addEventListener("DOMContentLoaded", function () {
-    const toggleSwitch = document.getElementById("dark-mode-toggle");
-    const currentTheme = localStorage.getItem("theme");
-  
-    if (currentTheme) {
-      document.body.classList.add(currentTheme);
-  
-      if (currentTheme === "dark-mode") {
-        toggleSwitch.checked = true;
-      }
-    }
-  
-    toggleSwitch.addEventListener("change", function () {
-      if (toggleSwitch.checked) {
-        document.body.classList.add("dark-mode");
-        localStorage.setItem("theme", "dark-mode");
-      } else {
-        document.body.classList.remove("dark-mode");
-        localStorage.setItem("theme", "light-mode");
-      }
-    });
+  const root = document.documentElement;
+  const toggle = document.getElementById("theme-toggle");
+  if (!toggle) return;
+
+  toggle.addEventListener("click", function () {
+    const next = root.dataset.theme === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    try {
+      localStorage.setItem("theme", next);
+    } catch (e) {}
   });
-  
+});
